@@ -11,11 +11,9 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        //this.FormBorderStyle = FormBorderStyle.None;
         this.TopMost = true;
         this.BackColor = System.Drawing.Color.LightYellow;
     }
-    
     
     private void textBox1_KeyDown(object sender, KeyEventArgs e)
     {
@@ -24,5 +22,11 @@ public partial class Form1 : Form
         {
             checkedListBox2.Items.Add(toDoItem);
         }
+    }
+
+    private void optionButton_MouseClick(object sender, MouseEventArgs e)
+    {
+        OptionsForm optionsForm = new OptionsForm();
+        optionsForm.ShowDialog();
     }
 }

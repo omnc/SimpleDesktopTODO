@@ -50,6 +50,7 @@ partial class Form1
         optionButton.TabIndex = 6;
         optionButton.Text = "Option";
         optionButton.UseVisualStyleBackColor = true;
+        optionButton.MouseClick += optionButton_MouseClick;
         // 
         // checkedListBox2
         // 
