@@ -29,6 +29,7 @@ partial class Form1
         label1 = new System.Windows.Forms.Label();
         label2 = new System.Windows.Forms.Label();
         textBox1 = new System.Windows.Forms.TextBox();
+        listBox1 = new System.Windows.Forms.ListBox();
         SuspendLayout();
         // 
         // checkedListBox1
@@ -89,12 +90,22 @@ partial class Form1
         textBox1.TabIndex = 10;
         textBox1.KeyDown += textBox1_KeyDown;
         // 
+        // listBox1
+        // 
+        listBox1.FormattingEnabled = true;
+        listBox1.ItemHeight = 15;
+        listBox1.Location = new System.Drawing.Point(84, 28);
+        listBox1.Name = "listBox1";
+        listBox1.Size = new System.Drawing.Size(66, 4);
+        listBox1.TabIndex = 11;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(367, 625);
+        Controls.Add(listBox1);
         Controls.Add(textBox1);
         Controls.Add(label2);
         Controls.Add(label1);
@@ -106,6 +117,8 @@ partial class Form1
         ResumeLayout(false);
         PerformLayout();
     }
+
+    private System.Windows.Forms.ListBox listBox1;
 
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.TextBox textBox1;
