@@ -23,25 +23,29 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        components = new System.ComponentModel.Container();
         checkedListBox1 = new System.Windows.Forms.CheckedListBox();
         optionButton = new System.Windows.Forms.Button();
         checkedListBox2 = new System.Windows.Forms.CheckedListBox();
         label1 = new System.Windows.Forms.Label();
         label2 = new System.Windows.Forms.Label();
         textBox1 = new System.Windows.Forms.TextBox();
-        listBox1 = new System.Windows.Forms.ListBox();
+        dateBox = new System.Windows.Forms.TextBox();
+        timer1 = new System.Windows.Forms.Timer(components);
         SuspendLayout();
         // 
         // checkedListBox1
         // 
         checkedListBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-        checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         checkedListBox1.CheckOnClick = true;
+        checkedListBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         checkedListBox1.FormattingEnabled = true;
         checkedListBox1.Location = new System.Drawing.Point(12, 93);
         checkedListBox1.Name = "checkedListBox1";
-        checkedListBox1.Size = new System.Drawing.Size(343, 162);
+        checkedListBox1.Size = new System.Drawing.Size(343, 146);
         checkedListBox1.TabIndex = 5;
+        checkedListBox1.ItemCheck += checkedListBox1_ItemCheck;
         // 
         // optionButton
         // 
@@ -56,11 +60,15 @@ partial class Form1
         // checkedListBox2
         // 
         checkedListBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+        checkedListBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        checkedListBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
         checkedListBox2.FormattingEnabled = true;
         checkedListBox2.Location = new System.Drawing.Point(12, 292);
         checkedListBox2.Name = "checkedListBox2";
-        checkedListBox2.Size = new System.Drawing.Size(343, 274);
+        checkedListBox2.Size = new System.Drawing.Size(343, 266);
         checkedListBox2.TabIndex = 7;
+        checkedListBox2.ItemCheck += checkedListBox2_ItemCheck;
+        checkedListBox2.KeyDown += checkedListBox2_KeyDown;
         // 
         // label1
         // 
@@ -90,22 +98,27 @@ partial class Form1
         textBox1.TabIndex = 10;
         textBox1.KeyDown += textBox1_KeyDown;
         // 
-        // listBox1
+        // dateBox
         // 
-        listBox1.FormattingEnabled = true;
-        listBox1.ItemHeight = 15;
-        listBox1.Location = new System.Drawing.Point(84, 28);
-        listBox1.Name = "listBox1";
-        listBox1.Size = new System.Drawing.Size(66, 4);
-        listBox1.TabIndex = 11;
+        dateBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        dateBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+        dateBox.Location = new System.Drawing.Point(12, 13);
+        dateBox.Name = "dateBox";
+        dateBox.Size = new System.Drawing.Size(257, 32);
+        dateBox.TabIndex = 11;
+        // 
+        // timer1
+        // 
+        timer1.Interval = 60000;
+        timer1.Tick += timer1_Tick;
         // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        BackColor = System.Drawing.SystemColors.Control;
+        BackColor = System.Drawing.SystemColors.Window;
         ClientSize = new System.Drawing.Size(367, 625);
-        Controls.Add(listBox1);
+        Controls.Add(dateBox);
         Controls.Add(textBox1);
         Controls.Add(label2);
         Controls.Add(label1);
@@ -114,11 +127,14 @@ partial class Form1
         Controls.Add(checkedListBox1);
         Location = new System.Drawing.Point(15, 15);
         Text = "Form1";
+        Load += Form1_Load;
         ResumeLayout(false);
         PerformLayout();
     }
 
-    private System.Windows.Forms.ListBox listBox1;
+    private System.Windows.Forms.Timer timer1;
+
+    private System.Windows.Forms.TextBox dateBox;
 
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.TextBox textBox1;
