@@ -6,12 +6,17 @@
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationIcon>list-icon-1440.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
       <Compile Update="OptionsForm.cs">
         <SubType>Form</SubType>
       </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="icon.ico" />
     </ItemGroup>
 
 </Project>
